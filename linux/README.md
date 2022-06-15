@@ -24,6 +24,11 @@ How to strip and control exported symbols using a linker script.
 ## Docker setup
 
 Maybe provide a starting point Dockerfile which can be used to build plugins that are ready to be deployed.
+This docker could have an old glibc and the latest build tools.
+
+## Getting static libs
+
+Maybe explain how to do this using vcpkg.
 
 ## Distribution
 
