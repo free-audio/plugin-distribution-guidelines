@@ -1,8 +1,34 @@
-#### THIS IS A DRAFT, work in progress
+# THIS IS A DRAFT, work in progress
 
-### Distributing plugins on Linux
+# Distributing plugins on Linux
 
 ## Standard path
+
+Sytem wide installation:
+- `/usr/lib/clap/<vendor>/plug.so`
+- `/usr/share/<vendor>/plug/` for your skins, factory content, ...
+
+User installation:
+- `~/.clap/<vendor>/plug.so`
+- `~/.local/share/<vendor>/`  for your skins, factory content, ...
+
+Settings, activation, licenses:
+- `~/.config/<vendor>/`
+
+Caches:
+- `~/.cache/<vendor>`
+
+Indexes, like for searches presets
+- `~/.local/var/<vendor>` ???
+
+User presets
+- `$XDG_DOCUMENTS/Audio Plugins/<vendor>/<plug>/presets`
+
+User skins
+- ???
+
+User additionnal content, wavetable, samples, ...
+- ???
 
 Type of installation: system install, user install, prefix install?
 Where to put the plugin shared library?
