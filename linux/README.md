@@ -5,11 +5,11 @@
 ## Standard path
 
 Sytem wide installation:
-- `/usr/lib/clap/<vendor>/plug.so`
+- `/usr/lib/clap/<vendor>/plug.clap`
 - `/usr/share/<vendor>/plug/` for your skins, factory content, ...
 
 User installation:
-- `~/.clap/<vendor>/plug.so`
+- `~/.clap/<vendor>/plug.clap`
 - `~/.local/share/<vendor>/`  for your skins, factory content, ...
 
 Settings, activation, licenses:
