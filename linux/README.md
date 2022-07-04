@@ -59,7 +59,33 @@ host platform can be freely chosen.
 
 ## Cleanup the plugin
 
-How to strip and control exported symbols using a linker script.
+When multiple shared libraries are linked into a program, each library provides a list of
+(dynamic) symbols (extern functions and variables) that the application and other libraries
+use to resolve their lists of required dynamic symbol dependencies.
+That way, one library can build on top of the functionality provided by another library, but that
+also means conflicts can arise when libraries export symbols with the same names.
+
+A large number of third party projects will by default export lots of dynamic symbols just by
+including their header-only files or by statically linking against the project. In order to
+constrain the set of exported symbols of a dynamic library,
+[linker scripts](https://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html#SEC6)
+can be used to allow exports of only a specific set of symbols.
+
+To give an example, the following script prevents the export of all symbols starting
+with an underscore:
+
+```c
+# ldscript.map
+# Add to linker command line as: -Wl,--version-script=ldscript.map
+{
+  global: *;
+  local: extern "C++" { _*; };
+};
+```
+
+The list of exported symbols can be inspected with:
+
+`objdump -T shared_library.so`
 
 ## Docker setup
 
